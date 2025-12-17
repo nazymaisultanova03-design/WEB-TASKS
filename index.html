@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nazym Aisultanova — Web Tasks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Nazym Aisultanova</h1>
+  <p>JavaScript Practice — SET B</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>JavaScript Tasks (SET B)</h2>
+    <p>Click a button to run a task.</p>
+
+    <button onclick="task1()">1. Reverse words</button>
+    <button onclick="task2()">2. First & Last character</button>
+    <button onclick="task6()">6. Count vowels</button>
+    <button onclick="task7()">7. Create array</button>
+    <button onclick="task11()">11. Square using map()</button>
+    <button onclick="task16()">16. Factorial</button>
+    <button onclick="task17()">17. Even / Odd</button>
+    <button onclick="task20()">20. Only 10 digits</button>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Nazym Aisultanova</p>
+</footer>
+
+<script>
+/* ========= TASK 1 ========= */
+function task1() {
+  let sentence = prompt("Enter a sentence:");
+  let result = sentence.split(" ").reverse().join(" ");
+  alert(result);
+}
+
+/* ========= TASK 2 ========= */
+function task2() {
+  let str = prompt("Enter a string:");
+  alert("First: " + str[0] + ", Last: " + str[str.length - 1]);
+}
+
+/* ========= TASK 6 ========= */
+function task6() {
+  let str = prompt("Enter a string:");
+  let vowels = "aeiouAEIOU";
+  let count = 0;
+
+  for (let char of str) {
+    if (vowels.includes(char)) count++;
+  }
+  alert("Vowels count: " + count);
+}
+
+/* ========= TASK 7 ========= */
+function task7() {
+  let input = prompt("Enter values separated by commas:");
+  let arr = input.split(",");
+  alert(arr);
+}
+
+/* ========= TASK 11 ========= */
+function task11() {
+  let arr = [1, 2, 3, 4];
+  let squared = arr.map(x => x * x);
+  alert(squared);
+}
+
+/* ========= TASK 16 ========= */
+function task16() {
+  let n = Number(prompt("Enter number:"));
+  let fact = 1;
+  for (let i = 1; i <= n; i++) {
+    fact *= i;
+  }
+  alert("Factorial: " + fact);
+}
+
+/* ========= TASK 17 ========= */
+function task17() {
+  let n = Number(prompt("Enter number:"));
+  alert(n % 2 === 0 ? "Even" : "Odd");
+}
+
+/* ========= TASK 20 ========= */
+function task20() {
+  let input = prompt("Enter exactly 10 digits:");
+  if (/^\d{10}$/.test(input)) {
+    alert("Valid input");
+  } else {
+    alert("Invalid input");
+  }
+}
+</script>
+
+</body>
+</html>
